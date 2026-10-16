@@ -1,0 +1,16 @@
+{
+  "classes": [
+    "Center",
+    "Donut",
+    "Edge-Loc",
+    "Edge-Ring",
+    "Loc",
+    "Near-full",
+    "Random",
+    "Scratch",
+    "none"
+  ],
+  "train_seconds": 184.40729236602783,
+  "latency_ms": 0.45007824897766113,
+  "best_val_macro_f1": 0.8604194174142479
+}

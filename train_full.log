@@ -1,0 +1,39 @@
+device: cuda AMD Radeon Pro W7900D
+epoch 1/12  val macro-F1 0.549  elapsed 16s
+epoch 2/12  val macro-F1 0.772  elapsed 32s
+epoch 3/12  val macro-F1 0.812  elapsed 47s
+epoch 4/12  val macro-F1 0.817  elapsed 62s
+epoch 5/12  val macro-F1 0.707  elapsed 77s
+epoch 6/12  val macro-F1 0.839  elapsed 93s
+epoch 7/12  val macro-F1 0.840  elapsed 108s
+epoch 8/12  val macro-F1 0.795  elapsed 123s
+epoch 9/12  val macro-F1 0.771  elapsed 138s
+epoch 10/12  val macro-F1 0.755  elapsed 154s
+epoch 11/12  val macro-F1 0.860  elapsed 169s
+epoch 12/12  val macro-F1 0.692  elapsed 184s
+              precision    recall  f1-score   support
+
+      Center       0.98      0.83      0.90       644
+       Donut       0.86      0.86      0.86        83
+    Edge-Loc       0.90      0.69      0.78       779
+   Edge-Ring       0.97      0.98      0.98      1452
+         Loc       0.79      0.70      0.74       539
+   Near-full       0.88      1.00      0.94        22
+      Random       0.88      0.88      0.88       130
+     Scratch       0.62      0.80      0.70       179
+        none       0.98      1.00      0.99     22115
+
+    accuracy                           0.97     25943
+   macro avg       0.87      0.86      0.86     25943
+weighted avg       0.97      0.97      0.97     25943
+
+[[  535     3     1     0    20     0     0     1    84]
+ [    0    71     0     0     9     0     0     3     0]
+ [    1     1   541    30    43     0     6     2   155]
+ [    0     0    14  1428     0     0     0     0    10]
+ [    5     6    18     0   375     0     2    36    97]
+ [    0     0     0     0     0    22     0     0     0]
+ [    4     1     2     1     4     3   114     0     1]
+ [    0     1     2     0     2     0     0   143    31]
+ [    1     0    22    15    19     0     7    45 22006]]
+train time 184s, latency 0.45 ms/wafer

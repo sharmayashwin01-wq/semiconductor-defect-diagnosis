@@ -1,0 +1,9 @@
+streamlit
+numpy
+matplotlib
+scikit-learn
+sentence-transformers
+transformers
+accelerate
+# torch is NOT listed on purpose: use the ROCm build (preinstalled in the Docker base image,
+# or: pip install torch --index-url https://download.pytorch.org/whl/rocm6.2)

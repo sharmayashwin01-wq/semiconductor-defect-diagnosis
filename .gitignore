@@ -1,0 +1,8 @@
+venv/
+__pycache__/
+.env
+*.pkl
+LSWMD.pkl
+wm811k_64.npz
+.ipynb_checkpoints/
+*.log
