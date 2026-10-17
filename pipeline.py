@@ -62,7 +62,7 @@ class Copilot:
             self.tok = AutoTokenizer.from_pretrained(LLM_NAME)
             self.llm = AutoModelForCausalLM.from_pretrained(
                 LLM_NAME, torch_dtype=torch.float16 if DEVICE == "cuda" else torch.float32,
-                device_map=DEVICE)
+                device_map="auto")
 
     def retrieve(self, query, k=2):
         q = self.emb.encode(query, convert_to_tensor=True)
@@ -71,15 +71,13 @@ class Copilot:
 
     @staticmethod
     def decide(label, conf):
-        @staticmethod
-def decide(label, conf):
-    if label == "none":
-        return "NO ACTION", "No systematic pattern detected — continue normal monitoring."
-    if conf >= 0.8:
-        return "HOLD LOT", f"High confidence ({conf:.0%}) defect detected — stop the lot immediately."
-    if conf >= 0.5:
-        return "FLAG FOR REVIEW", f"Moderate confidence ({conf:.0%}) — engineer inspection required."
-    return "UNCERTAIN", f"Low confidence ({conf:.0%}) — send to manual review before any action."
+        if label == "none":
+            return "NO ACTION", "No systematic pattern detected — continue normal monitoring."
+        if conf >= 0.8:
+            return "HOLD LOT", f"High confidence ({conf:.0%}) defect detected — stop the lot immediately."
+        if conf >= 0.5:
+            return "FLAG FOR REVIEW", f"Moderate confidence ({conf:.0%}) — engineer inspection required."
+        return "UNCERTAIN", f"Low confidence ({conf:.0%}) — send to manual review before any action."
 
     def classify(self, wafer):
         x = torch.tensor(np.asarray(wafer), dtype=torch.float32)[None, None] / 2.0
